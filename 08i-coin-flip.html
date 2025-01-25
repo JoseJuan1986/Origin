@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08i-Coin Flip Game</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <button onclick="
+        playGame('heads');
+       // updateScore();
+      ">
+      heads
+    </button>
+    <button onclick="
+      playGame('tails');
+      //updateScore();
+    ">
+      tails
+    </button>
+    <button onclick="
+      score2.wins = 0;
+      score2.losses = 0;
+      console.log(score2);
+      localStorage.setItem('score2', JSON.stringify(score2));
+    ">
+      reset
+    </button>
+
+    <script>
+      //let guess = '';
+      const score2 = JSON.parse(localStorage.getItem('score2'))|| {
+        wins: 0,
+        losses: 0
+      };
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        console.log(randomNumber);
+        let result = '';
+       
+        randomNumber < 0.5 ? result = `heads` : result = `tails`;
+        console.log(result);
+        console.log(guess);
+        result === guess ? console.log(`You win!`) : console.log(`You lose!`);
+        //result === guess ? console.log(score.wins += 1) : console.log(score.losses += 1); 
+        if (result === guess) {
+          score2.wins += 1;
+          
+        } else { 
+          score2.losses += 1;
+          
+        }
+        console.log(score2);
+        localStorage.setItem('score2', JSON.stringify(score2));
+      };
+      /*
+      function updateScore() {
+        if (result === guess) {
+          score.wins += 1;
+        };
+      };
+      */
+      /*
+      if (randomNumber < 0.5) {
+        result = `heads`;
+      } else {
+        result = `tails`;
+      }
+      */
+      //guess = `tails`;
+     
+      /*
+      if (result === guess) {
+        console.log(`You win!`);
+      } else if ( result !== guess) {
+        console.log(`You lose!`);
+      }
+      */
+
+    </script>
+  </body>
+</html>

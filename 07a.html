@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7a</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    
+    
+    <script>
+     /*
+     function greet(name) {
+      
+        if (!name) {
+          console.log(`Hello there!`);
+        } else if (name) {
+          console.log(`Hello ${name}!`);
+        }
+      }
+      greet('Diana');
+      greet('Belen');
+      greet();
+      let farenheit = 0;
+      function convertToFarenheit(celsius) {
+        
+        farenheit = (celsius * 9 / 5) + 32;
+       
+
+        return farenheit;
+      }
+      
+      convertToFarenheit(25);
+      
+      console.log(farenheit);
+      console.log(convertToFarenheit(25));
+
+      let celsius = 0;
+      function convertToCelsius(farenheit) {
+        
+        celsius = (farenheit - 32) *5 / 9;
+       
+
+        return celsius;
+      }
+      
+      convertToCelsius(77);
+      
+      console.log(celsius);
+      console.log(convertToCelsius(77));
+      */
+      //let farenheit = 0;
+      //let celsius = 0;
+      /*
+      let result = 0;
+      let units = '';
+      function convertTemperature(degrees, unit) {
+
+        if (unit === 'farenheit') {
+          result = (degrees * 9 / 5) + 32 + ' ' + unit;
+          //units = 'F';
+        } else if (unit === 'celsius') {
+          result = (degrees - 32) * 5 / 9 + ' ' + unit;
+          //units = 'C';
+        }
+        return `The temperature is  ${result}`;
+      }
+      convertTemperature(25, 'farenheit');
+      console.log(convertTemperature());
+
+      convertTemperature(86, 'celsius');
+      console.log(convertTemperature());
+      */
+      
+      function convertLength(lenght, from, to) {
+        if (from ==='km' && to === 'miles') {
+          return  `${lenght / 1.6} ${to}`;
+          
+        } else if ( from === 'miles' && to === 'km') {
+          return `${lenght * 1.6} ${to}`;          
+        
+        } else if (from ==='miles' && to === 'feet') {
+          return `${lenght * 5280} ${to}`;
+          
+        } else if (from ==='feet' && to === 'miles') {
+            return `${lenght / 5280} ${to}`;
+            
+          } else if (from ==='feet' && to === 'km') {
+            return `${lenght / 3281} ${to}`;
+            
+          } else if (from ==='km' && to === 'feet') {
+            return `${lenght * 3281} ${to}`;
+            
+          } else if (from !== 'miles' && from !== 'km' && from !== 'feet') {
+            return `Invalid unit: ${from}`;
+
+          } else if (to !== 'miles' && to !== 'km' && to!== 'feet') {
+            return  `Invalid unit: ${to}`;
+
+          } else if (to === from) {
+            return `${lenght} ${to}`;
+          }
+
+        
+      }
+      
+      let test = '';
+      convertLength(50, 'miles', 'km');
+      console.log(convertLength(50, 'miles', 'km'));
+      
+      test = convertLength(32, 'km', 'miles');
+      console.log(test);
+
+      
+
+      test = convertLength(5, 'miles', 'km');
+      console.log(test);
+      test = convertLength(5, 'miles', 'feet');
+      console.log(test);
+      test = convertLength(5, 'km', 'feet');
+      console.log(test);
+
+      test = convertLength(50, 'km', 'km');
+      console.log(test);
+
+      console.log(convertLength(5, 'lbs', 'lbs'));
+      
+
+      
+      /*
+      function function1() {
+        console.log('hello');
+        console.log(2+2);
+      }
+      
+      function1();
+      function1();
+      */
+      /*
+      Return = gets a value, variable, calculation or anything that results in a value out of a function
+      Parameter = puts a value into a function
+      
+     
+      function calculatedTax(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      calculatedTax(2000, 0.2);
+      calculatedTax(5000);
+      */
+    </script>
+  </body>
+</html>
