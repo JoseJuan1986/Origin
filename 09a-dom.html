@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09a</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <button>9a</button>
+    <br>
+    <button class="js-button">9b</button>
+    <!-- <button class="js-button">Second button</button> -->
+    <br>
+    <button class="js-button-heads" onclick="
+      document.querySelector('.js-heads-tails')
+      .innerHTML = 'You chose: heads';
+    ">heads</button>
+    <button class="js-button-tails" onclick="
+      document.querySelector('.js-heads-tails')
+      .innerHTML = 'You chose: tails';
+    ">tails</button>
+    <p class="js-heads-tails"></p>
+   
+    
+    <script>
+      console.log(document.querySelector('button')
+        .innerHTML);
+
+      document.querySelector('.js-button')
+        .innerHTML = '9b done!'
+      /*
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      */
+      
+      
+      
+      /*
+      console.log(document.title);
+      document.title = 'Changed';
+
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = '<button>Good job!</button>';
+      */
+     
+     /*
+      document.body.innerHTML = 'hello';
+      document.title = 'Good job!';
+      */
+
+    </script>
+  </body>
+</html>
