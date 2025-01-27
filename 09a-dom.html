@@ -10,21 +10,26 @@
   </head>
   <body>
     <input  class="js-name-input" placeholder="Name" type="text" name="" id="" onkeydown="
-      
-    if (event.key === 'Enter') {
-      document.querySelector('.js-name-input').value = `Your name is: ${document.querySelector('.js-name-input').value}`;
-    }
-  
-  ">
+      handleEvent();
+    ">
     <button onclick="
      //const inputElement = document.querySelector('.js-name-input');
      //inputElement.value = `Your name is: ${inputElement.value}`;
         //inputElement.value = `Your name is: ${input}`;
-      document.querySelector('.js-name-input').value = `Your name is: ${document.querySelector('.js-name-input').value}`;
-
+      InputElement();
     " >Submit</button>
-   
+    <p class="js-name-output"></p>
     <script>
+
+      function InputElement() {
+        document.querySelector('.js-name-output').innerHTML = `Your name is: ${document.querySelector('.js-name-input').value}`;
+      }
+
+      function handleEvent() {
+        if (event.key === 'Enter') {
+      InputElement();
+    }
+      }
 
     </script>
   </body>
