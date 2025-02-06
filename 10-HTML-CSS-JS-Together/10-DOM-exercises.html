@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercices</title>
+    <style>
+      body {
+      font-family: Arial;
+     }
+
+     .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+
+     }
+
+     .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color: black;
+     }
+
+     .cost-input {
+      font-size: 15px;
+      /*
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      */
+      padding: 10px;
+     }
+
+     .calculate-button {
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 15px;
+      padding: 12px 15px;
+      cursor: pointer;
+     }
+     
+     .add-to-cart-button {
+      background-color: rgb(255, 216,20);
+      border: none;
+      font-size: 20px;
+      padding: 10px 70px;
+      border-radius: 200px;
+     }
+
+     .request-now-button {
+      background-color: black;
+      color: white;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+     }
+
+     .schedule-for-later-button {
+      background-color: rgb(230, 230, 230);
+      border: none;
+      font-size: 15px;
+      font-weight:bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+      
+     }
+
+     .gaming-button{
+      background-color: rgb(230, 230, 230);
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+      margin-right: 20px;
+      cursor: pointer;
+     }
+
+     .music-button{
+      background-color: rgb(230, 230, 230);
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+      margin-right: 20px;
+      cursor: pointer;
+     }
+
+     .tech-button{
+      background-color: rgb(230, 230, 230);
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+      margin-right: 20px;
+      cursor: pointer;
+     }
+
+     .is-toggled{
+      background-color: blue;
+      color: yellowgreen;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 5px;
+      margin-right: 20px;
+      cursor: pointer;
+     }
+    </style>
+  </head>
+  <body>
+   <p>Youtube Subscribe Button</p>
+   <button onclick="
+      Subscribe();
+   " class="js-subscribe-button subscribe-button">
+     Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+    handleCostKeydown(event);
+    
+    ">
+    <button class="calculate-button" onclick="
+      calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <button class="add-to-cart-button js-add-to-cart-button">Add to Cart</button>
+    <br>
+    <br>
+    <button class="request-now-button js-request-now-button">Request now</button>
+
+    <button class="schedule-for-later-button">Schedule for later</button>
+    <br>
+    <br>
+    <button class="gaming-button js-gaming-button " onclick="
+          turnOnOffButtons('gaming');
+        ">Gaming</button>
+
+    <button class="music-button js-music-button" onclick="
+        turnOnOffButtons('music');
+    ">Music</button>
+
+    <button class="tech-button js-tech-button" onclick="
+      turnOnOffButtons('tech');
+    ">Tech</button>
+    
+    <script>
+      String(25)
+      console.log('25' - 5);
+      console.log('25' + 5);
+
+      window.document
+      window.console.log('window');
+      window.alert
+
+      function handleCostKeydown(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal(){
+       
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+
+        if (cost < 40 && cost > 0) {
+          cost = cost + 10;
+        }
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+
+      }
+
+      function Subscribe() {
+        
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        }
+      }
+      
+      console.log(document.querySelector('.js-add-to-cart-button').classList.contains('js-add-to-cart-button'));
+
+      function turnOnOffButtons(buttonType) {
+        const button = document.querySelector(`.js-${buttonType}-button`);
+        if (button.classList.contains('is-toggled')) {
+        button.classList.remove('is-toggled'); 
+        } else {
+        button.classList.add('is-toggled');
+        }
+      }
+      
+      
+      
+    </script>
+  </body>
+</html>
